@@ -4,7 +4,7 @@ from .models import ItemsModels
 
 class ItemView_template(TemplateView):
 
-	template_name = 'store/index.html'
+	template_name = 'items/index.html'
 
 
 
