@@ -108,4 +108,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
+# "Поисковики" статики. Первый ищет статику в STATICFILES_DIRS,
+# второй в папках приложений.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+# dir for static common for the project (assets)
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'items\static'),
+]
+
 STATIC_URL = '/static/'
+# it is for specific app's static
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
