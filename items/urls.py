@@ -8,8 +8,9 @@ from . import views
 app_name = 'items'
 
 urlpatterns = [
-    url(r'^$', views.index, name = 'index'),
     url(r'^get_root/$', views.get_root, name = 'root'),
+    url(r'^forms$', views.input_item, name = 'forms'),
+    url(r'^$', views.index, name = 'index'),
 ]
 
 

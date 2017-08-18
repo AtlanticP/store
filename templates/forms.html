@@ -1,0 +1,9 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+	<forms action='{% url "items:forms" %}' method='post'>
+	{{ forms }}
+	<input type="submit" value="подтвердить" />
+	</forms>
+
+{% endfor %}
