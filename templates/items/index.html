@@ -2,24 +2,25 @@
 
 {% block body %}
 
+	{% for item in all_items %}
 	<ul>
 		<div class='container'>
 			<div class='row'>
-	{% for item in all_items %}
 				<div class='col-md-4'>
 					<div class='panel'>
 						<div class='panel-body' class='panel-default'>
-							<a href='#'>
-								<img src='#' class='img-responsive'>
-							</a>
-							<h1>{{ item.name }}</h1>
-							<h3>{{ item.description }}</h3>
-							<h3>{{ item.price_of_income }}</h3>
-							<h3>{{ item.price_of_sold }}</h3>
-							<h3>{{ item.interests }}</h3>
+							
+							<img src='{{ item.item_logo.url }}' class='img-responsive' width="200" height="160">
+							<h1>Наименование: {{ item.name }}</h1>
+							<h3>Описание: {{ item.description }}</h3>
+							<h3>Цена покупки: {{ item.price_of_income }}</h3>
+							<h3>Цена продажи: {{ item.price_of_sold }}</h3>
+							<h3>Разница: {{ item.interests }}</h3>
+							
 							<form action='#' >	
 								<button type="submit" class="btn btn-primary">View details</button>
 							</form>	
+							
 							<form action="#" method='post'>
 								{% csrf_token %}
 								<input type='hidden' name='album_id' value='{{ album.id }}'>
@@ -29,12 +30,11 @@
 						</div>
 					</div>			
 				</div>
-	{% endfor %}
 			</div>
-
 		</div>
 	</ul>
-
+	
+	{% endfor %}
 {% endblock %}
 
 	
