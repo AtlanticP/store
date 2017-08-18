@@ -7,4 +7,8 @@ class ItemsModels(models.Model):
 	description = models.CharField(max_length = 500)
 	price_of_income = models.IntegerField()
 	price_of_sold = models.IntegerField()
+	interests = models.IntegerField(default = 0)
+
+	def __str__(self):
+		return self.name
 

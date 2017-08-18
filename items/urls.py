@@ -8,7 +8,7 @@ from . import views
 app_name = 'items'
 
 urlpatterns = [
-    url(r'^$', views.ItemView_template.as_view(), name = 'index'),
+    url(r'^$', views.index, name = 'index'),
     url(r'^get_root/$', views.get_root, name = 'root'),
 ]
 
